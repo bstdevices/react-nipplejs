@@ -1,3 +1,16 @@
+.App h1,
+.App h2 {
+  text-align: center;
+}
+
+.colorful {
+  font-size: 72px;
+  background: linear-gradient(to right, #0099f7, #f11712);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .App {
   background-color: #18181b;
   min-height: 100vh;
@@ -7,26 +20,11 @@
   justify-content: center;
   color: white;
 }
-.App h1,
-.App h2 {
-  text-align: center;
-}
 
-.colorful {
-  font-size: 72px;
-  background: linear-gradient(to left, #0099f7, #f11712);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.App-header {
-  font-size: calc(10px + 2vmin);
-}
-
-a {
+.App-link {
   color: white;
 }
+
 .container {
   display: flex;
   flex-direction: row;

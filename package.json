@@ -1,12 +1,29 @@
 {
+  "name": "react-nipplejs-main",
+  "version": "0.0.1",
+  "description": "A nice greeter",
+  "keywords": [
+    "nipplejs",
+    "react",
+    "component",
+    "components",
+    "ecosystem-react",
+    "react-component"
+  ],
+  "author": "Ola Malmgren",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev --no-cache --continue",
+    "web": "turbo run web --no-cache --continue",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=react-nipplejs && changeset publish"
   },
   "devDependencies": {
     "eslint": "^8.4.1",
@@ -17,5 +34,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
 }

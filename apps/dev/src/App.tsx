@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import './App.css';
 import { Nipple } from 'react-nipplejs';
+import './App.css';
 
 interface ListItemProps {
   label: string;
   data: string | Object;
 }
+
 function App() {
   const [nipples, setNipples] = useState([
     { id: 'dynamic', mode: 'dynamic', color: 'red', data: null },
@@ -25,18 +26,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="header">
-          BST Devices
           <div className="colorful">REACT-NIPPLEJS</div>
         </h1>
       </header>
       <section>
-        <h2>
-          <a href="https://yoannmoi.net/nipplejs/">Nipplejs</a> wrapped in react
-        </h2>
         <div className="container">
           {nipples.map(({ mode, color, data, id }: { mode: any; color: string; data?: any; id: string }, index) => (
             <div className="column" key={id}>
-              <h2 style={{ color: color }}>{`${mode[0].toUpperCase()}${mode.slice(1).toLowerCase()}`}</h2>
+              <h2>{`${mode[0].toUpperCase()}${mode.slice(1).toLowerCase()}`}</h2>
               <div className="joystick">
                 <div className="debug">
                   <Debug data={data} />
@@ -57,6 +54,7 @@ function App() {
     </div>
   );
 }
+
 const Debug = ({ data }: { data: any }) => {
   return (
     <ul>

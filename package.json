@@ -1,7 +1,8 @@
 {
   "name": "react-nipplejs-main",
   "version": "0.0.1",
-  "description": "A nice greeter",
+  "description": "nipplejs wrapped in react",
+  "homepage": "https://bstdevices.github.io/react-nipplejs",
   "keywords": [
     "nipplejs",
     "react",

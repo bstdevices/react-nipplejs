@@ -30,7 +30,7 @@ jobs:
         run: yarn
 
       - name: Build
-        run: yarn build
+        run: yarn build --filter=web
 
       - name: Test
         run: yarn test
@@ -55,3 +55,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+        run: yarn start --filter=web

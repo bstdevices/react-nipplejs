@@ -1,34 +1,74 @@
-# Turborepo Create React App starter
+# react-nipplejs
 
-This is an official starter Turborepo.
+[Demo](https://bstdevices.github.io/react-nipplejs/)
 
-## Using this example
+[Nipplejs](https://yoannmoi.net/nipplejs/) wrapped in react.
 
-Run the following command:
+## Examples
 
-```sh
-npx create-turbo@latest -e with-create-react-app
-```
+...
 
-## What's inside?
+## API
 
-This Turborepo includes the following packages/apps:
+...
 
-### Apps and Packages
+### options
 
-- `docs`: a [create-react-app](https://create-react-app.dev) app
-- `web`: another [create-react-app](https://create-react-app.dev) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-react` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+...
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### onCreated
 
-### Utilities
+...
 
-This Turborepo has some additional tools already setup for you:
+### onDestroy
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+...
+
+### onStart
+
+...
+
+### onEnd
+
+...
+
+### onMove
+
+...
+
+### onDir
+
+...
+
+### onPlain
+
+...
+
+### onShown
+
+...
+
+### onHidden
+
+...
+
+### onPressure
+
+...
+
+## Development
+
+- `yarn`
+- `yarn dev`
+
+## Deploy
+
+### npm
+
+- `yarn changeset` - Select react-nipplejs
+- `yarn version-packages`
+- `yarn release`
+
+### Demo
+
+Push to main deploys to [Demo](https://bstdevices.github.io/react-nipplejs/)

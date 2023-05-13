@@ -1,65 +1,20 @@
 # react-nipplejs
 
-[Demo](https://bstdevices.github.io/react-nipplejs/)
+> [Nipplejs](https://yoannmoi.net/nipplejs/) component built with React
 
-[Nipplejs](https://yoannmoi.net/nipplejs/) wrapped in react.
+[Demo & Documentation](https://bstdevices.github.io/react-nipplejs/)
 
-## Examples
+## Local setup
 
-...
-
-## API
-
-...
-
-### options
-
-...
-
-### onCreated
-
-...
-
-### onDestroy
-
-...
-
-### onStart
-
-...
-
-### onEnd
-
-...
-
-### onMove
-
-...
-
-### onDir
-
-...
-
-### onPlain
-
-...
-
-### onShown
-
-...
-
-### onHidden
-
-...
-
-### onPressure
-
-...
-
-## Development
+### develop nipple
 
 - `yarn`
 - `yarn dev`
+
+### develop web
+
+- `yarn`
+- `yarn web`
 
 ## Deploy
 

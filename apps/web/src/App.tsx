@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import logo from './github-mark-white.svg';
 import { Nipple } from 'react-nipplejs';
 
 interface ListItemProps {
@@ -23,6 +24,11 @@ function App() {
 
   return (
     <div className="App">
+      <nav>
+        <a href="https://github.com/bstdevices/react-nipplejs">
+          <img src={logo} alt="Github logo" />
+        </a>
+      </nav>
       <header className="App-header">
         <h1 className="header">
           BST Devices

@@ -1,7 +1,7 @@
 # react-nipplejs
 
-[Demo](https://bstdevices.github.io/react-nipplejs/)
+> [Nipplejs](https://yoannmoi.net/nipplejs/) component built with React
 
-[Nipplejs](https://yoannmoi.net/nipplejs/) wrapped in react.
+[Demo & Documentation](https://bstdevices.github.io/react-nipplejs/)
 
 [Github repo](https://github.com/bstdevices/react-nipplejs)

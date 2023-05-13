@@ -12,6 +12,18 @@
   text-align: center;
 }
 
+nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0.7rem;
+}
+
+nav img {
+  width: 32px;
+  height: 32px;
+}
+
 .colorful {
   font-size: 72px;
   background: linear-gradient(to left, #0099f7, #f11712);

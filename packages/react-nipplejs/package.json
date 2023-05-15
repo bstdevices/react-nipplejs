@@ -16,6 +16,9 @@
   "author": "Ola Malmgren",
   "license": "MIT",
   "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/bstdevices/react-nipplejs/issues"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

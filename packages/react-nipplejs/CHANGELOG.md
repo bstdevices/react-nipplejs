@@ -1,5 +1,11 @@
 # react-nipplejs
 
+## 0.0.5
+
+### Patch Changes
+
+- update readme & fix cb
+
 ## 0.0.4
 
 ### Patch Changes

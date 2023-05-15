@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import { Nipple } from 'react-nipplejs';
+import { Nipple, JoystickManagerOptions, JoystickOutputData } from 'react-nipplejs';
 import './App.css';
 
 interface ListItemProps {
   label: string;
   data: string | Object;
 }
-
+interface NippleProps {
+  id: string;
+  options: JoystickManagerOptions;
+  data: JoystickOutputData | null;
+}
 function App() {
-  const [nipples, setNipples] = useState([
-    { id: 'dynamic', mode: 'dynamic', color: 'red', data: null },
-    { id: 'semi', mode: 'semi', color: 'green', data: null },
-    { id: 'static', mode: 'static', color: 'yellow', data: null },
+  const [nipples, setNipples] = useState<NippleProps[]>([
+    { id: 'dynamic', options: { mode: 'dynamic', color: 'red' }, data: null },
+    { id: 'semi', options: { mode: 'semi', color: 'green', catchDistance: 50 }, data: null },
+    { id: 'static', options: { mode: 'static', color: 'yellow' }, data: null },
   ]);
 
   const handleNippleData = (index: number, data: any) => {
@@ -31,15 +35,17 @@ function App() {
       </header>
       <section>
         <div className="container">
-          {nipples.map(({ mode, color, data, id }: { mode: any; color: string; data?: any; id: string }, index) => (
+          {nipples.map(({ options, data, id }, index) => (
             <div className="column" key={id}>
-              <h2>{`${mode[0].toUpperCase()}${mode.slice(1).toLowerCase()}`}</h2>
+              <h2 style={{ color: options.color }}>
+                {options?.mode && `${options.mode[0].toUpperCase()}${options.mode.slice(1).toLowerCase()}`}
+              </h2>
               <div className="joystick">
                 <div className="debug">
                   <Debug data={data} />
                 </div>
                 <Nipple
-                  options={{ mode, color }}
+                  options={options}
                   onStart={(_, _data: any) => handleNippleData(index, _data)}
                   onMove={(_, _data: any) => handleNippleData(index, _data)}
                   onEnd={(_, _data: any) => handleNippleData(index, _data)}

@@ -3,24 +3,20 @@ import nipplejs, { JoystickManagerOptions, EventData, JoystickOutputData } from 
 
 export interface NippleProps extends React.HTMLAttributes<HTMLDivElement> {
   options?: JoystickManagerOptions;
-  onCreated?: Function;
-  onDestroy?: Function;
   onStart?: (e: EventData, data: JoystickOutputData) => void;
   onEnd?: (e: EventData, data: JoystickOutputData) => void;
   onMove?: (e: EventData, data: JoystickOutputData) => void;
   onDir?: (e: EventData, data: JoystickOutputData) => void;
   onPlain?: (e: EventData, data: JoystickOutputData) => void;
-  onShown?: Function;
-  onHidden?: Function;
-  onPressure?: Function;
+  onShown?: (e: EventData, data: JoystickOutputData) => void;
+  onHidden?: (e: EventData, data: JoystickOutputData) => void;
+  onPressure?: (e: EventData, data: JoystickOutputData) => void;
 }
 
 export const Nipple = (props: NippleProps) => {
   const innerRef = createRef<HTMLDivElement>();
   const {
     options = {},
-    onCreated = () => {},
-    onDestroy = () => {},
     onStart = () => {},
     onEnd = () => {},
     onMove = () => {},
@@ -48,12 +44,12 @@ export const Nipple = (props: NippleProps) => {
     const handleNippleStart = (e: EventData, data: JoystickOutputData) => props?.onStart && props.onStart(e, data);
     const handleNippleEnd = (e: EventData, data: JoystickOutputData) => props?.onEnd && props.onEnd(e, data);
     const handleNippleMove = (e: EventData, data: JoystickOutputData) => props?.onMove && props.onMove(e, data);
-    const handleNippleDir = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
-    const handleNipplePlain = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
-    const handleNippleShown = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
-    const handleNippleHidden = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
-    const handleNippleDestroyed = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
-    const handleNipplePressure = (e: EventData, data: JoystickOutputData) => console.log({ ...e, data });
+    const handleNippleDir = (e: EventData, data: JoystickOutputData) => props?.onDir && props.onDir(e, data);
+    const handleNipplePlain = (e: EventData, data: JoystickOutputData) => props?.onPlain && props.onPlain(e, data);
+    const handleNippleShown = (e: EventData, data: JoystickOutputData) => props?.onShown && props.onShown(e, data);
+    const handleNippleHidden = (e: EventData, data: JoystickOutputData) => props?.onHidden && props.onHidden(e, data);
+    const handleNipplePressure = (e: EventData, data: JoystickOutputData) =>
+      props?.onPressure && props.onPressure(e, data);
 
     _manager.on('start', handleNippleStart);
     _manager.on('end', handleNippleEnd);
@@ -62,7 +58,6 @@ export const Nipple = (props: NippleProps) => {
     _manager.on('plain', handleNipplePlain);
     _manager.on('shown', handleNippleShown);
     _manager.on('hidden', handleNippleHidden);
-    _manager.on('destroyed', handleNippleDestroyed);
     _manager.on('pressure', handleNipplePressure);
 
     return () => {
@@ -73,7 +68,6 @@ export const Nipple = (props: NippleProps) => {
       _manager.off('plain', handleNipplePlain);
       _manager.off('shown', handleNippleShown);
       _manager.off('hidden', handleNippleHidden);
-      _manager.off('destroyed', handleNippleDestroyed);
       _manager.off('pressure', handleNipplePressure);
       _manager.destroy();
     };
